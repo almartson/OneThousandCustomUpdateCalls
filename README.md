@@ -10,6 +10,7 @@ If you are developing a Unity video game that has MANY GameObjects, each one wit
 NOTE: If your game has an GameManager (with an Update method), and you only have a few Scripts with the Update() method, maybe this pattern is not the ideal solution. It is a good optimization only when you have several Scripts running their own Update()'s separately. 
 
 I recommend you to read the original (very good) Unity Blog article: https://blogs.unity3d.com/es/2015/12/23/1k-update-calls/ .
+
 It has been tested in Unity 2018.4.0f1. You have a Timer-Counter GameObject to Benchmark it if you feel so.
 
 I hope this helps someone.
