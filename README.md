@@ -3,7 +3,7 @@
 This is my custom version of [https://github.com/valyard/Unity-Updates, original Blog: https://blogs.unity3d.com/es/2015/12/23/1k-update-calls/ ], ready to be modified to make an optimum new video game.
 
 
-# How does it work?
+## How does it work?
 
 If you are developing a Unity video game that has MANY GameObjects, each one with its own 'Update()' Method (in its own Script); then you may encounter a performance problem. With this example (or rather: 'Empty Project Skelleton'), you can Optimize your game by using ONLY ONE Unity-Update Method. In the Unity Blog it was called: the 'manager pattern'. Just replace the 'Original Game Object'. The same Idea can be applied wth LateUpdate() and FixedUpdate() methods.
 
