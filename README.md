@@ -8,7 +8,7 @@ Initially I wanted to try different approaches about the update manager for exam
 But also decided to update and make it easier for others to see and try for themself, maybe you have different results.
 
 
-##Original readme
+## Original ReadMe
 
 
 This is my custom version of [https://github.com/valyard/Unity-Updates, original Blog: https://blogs.unity3d.com/es/2015/12/23/1k-update-calls/ ], ready to be modified to make an optimum new video game.
