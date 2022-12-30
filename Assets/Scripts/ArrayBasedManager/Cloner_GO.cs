@@ -49,7 +49,7 @@ public class Cloner_GO : MonoBehaviour
             this._myCreatedGOArray[0] = this._originalGameObject;
 
 
-            // 2- Create the 1000000000 GameObjects:
+            // 2- Create the GameObjects:
             //
             for (int i = 1; i < this._totalOfGameObjectsToCreate; i++)
             {

@@ -24,11 +24,12 @@ public class Counter : MonoBehaviour
         {
             return;
         }
-        RecordFrameTicks();
+
+        RecordFrameStats();
         ResetStopWatch();
     }
 
-    private void RecordFrameTicks()
+    private void RecordFrameStats()
     {
         if (sp.IsRunning)
         {
