@@ -1,4 +1,15 @@
-# OneThousandCustomUpdateCalls
+# PerformanceTestCustomUpdateCalls
+This is an extended version of my friends project about unity update calls performance testing.
+Main idea is avoiding Unity’s own update method if you are running many Monobehaviours at the same time.
+
+The original projects manager is using an array of modified Monobehaviours that it cycles through with an for loop each update. The manager calls a update method on each element.
+
+Initially I wanted to try different approaches about the update manager for example using listeners.
+But also decided to update and make it easier for others to see and try for themself, maybe you have different results.
+
+
+##Original readme
+
 
 This is my custom version of [https://github.com/valyard/Unity-Updates, original Blog: https://blogs.unity3d.com/es/2015/12/23/1k-update-calls/ ], ready to be modified to make an optimum new video game.
 
