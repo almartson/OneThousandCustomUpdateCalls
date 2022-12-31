@@ -11,16 +11,27 @@ public class Counter : MonoBehaviour
     private long total;
     private long num;
     private long last;
+    private bool isRunning = false;
 
     private void Awake()
     {
         sp = new Stopwatch();
         StartCoroutine(log());
     }
+    public void StartTimer()
+    {
+        isRunning= true;
+        ResetStopWatch();
+    }
+    public void StopTimer()
+    {
+        isRunning = false;
+        sp.Stop();
+    }
 
     private void Update()
     {
-        if (Time.time < StartTime)
+        if (Time.time < StartTime && isRunning)
         {
             return;
         }

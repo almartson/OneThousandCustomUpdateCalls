@@ -18,6 +18,7 @@ public class Cloner_GO : MonoBehaviour
     /// GameObject to copy or clone.
     /// </summary>
     public GameObject _originalGameObject;
+    public Transform _targetTransform;
 
     /// <summary>
     /// GameObject's List[] to be used in another class/script.
@@ -56,7 +57,7 @@ public class Cloner_GO : MonoBehaviour
 
                 // Instantiate the GO, and add it as a Child of the GameObject that has this Script as a Component:
                 //
-                this._myCreatedGOArray[ i ] = Instantiate(this._originalGameObject, this.transform);
+                this._myCreatedGOArray[ i ] = Instantiate(this._originalGameObject, _targetTransform);
 
             }//End for (int i = 0; i < this._totalOfGameObjectsToCreate; i++)
 

@@ -8,6 +8,7 @@ namespace ObserverManager
     {
         [SerializeField] GameObject ObjectToInstanciate;
         [SerializeField] int numberOfInstances;
+        [SerializeField] Transform tragetTransform;
         void Awake()
         {
             CreateInstances(ObjectToInstanciate,numberOfInstances);
@@ -17,7 +18,7 @@ namespace ObserverManager
         {
             for (int i = 0; i < amount; i++)
             {
-                Instantiate(go);
+                Instantiate(go,tragetTransform);
             }
         }
     }
