@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ListManager
 { 
-    public class ListUpdated : MonoBehaviour
+    public class ListUpdated : TestCase
     {
         [SerializeField] UpdateManager manager;
         public int numberOfInvokes;
@@ -12,8 +12,7 @@ namespace ListManager
         {
             numberOfInvokes++;
         }
-
-        private void Start()
+        public override void Setup()
         {
             manager.AddUpdateItem(this);
         }

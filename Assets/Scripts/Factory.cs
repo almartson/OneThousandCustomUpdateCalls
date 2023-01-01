@@ -7,7 +7,7 @@ namespace ObserverManager
 {
     public class Factory : MonoBehaviour, ICreate
     {
-        [SerializeField] GameObject ObjectToInstanciate;
+        [SerializeField] TestCase ObjectToInstanciate;
         [SerializeField] int numberOfInstances;
         [SerializeField] Transform tragetTransform;
         FPSTimer timer;
@@ -17,7 +17,7 @@ namespace ObserverManager
             numberOfInstances = amountToSpawn;
             CreateInstances(ObjectToInstanciate, numberOfInstances);
         }
-        public void CreateInstances(GameObject go, int amount)
+        public void CreateInstances(TestCase go, int amount)
         {
             timer= new FPSTimer();
             var gobj = new GameObject("Parent");
@@ -25,7 +25,8 @@ namespace ObserverManager
             timer.StartTimer();
             for (int i = 0; i < amount; i++)
             {
-                Instantiate(go, gobj.transform);
+                var newGO = Instantiate(go, gobj.transform);
+                newGO.Setup();
             }
             timer.Update();
             timer.StopTimer();

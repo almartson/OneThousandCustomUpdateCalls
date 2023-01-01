@@ -9,15 +9,19 @@ namespace ListManager
 
     public class UpdateManager : MonoBehaviour
     {
-        List<ListUpdated> listToUpdate;
+       
+        List<ListUpdated> listToUpdate = new List<ListUpdated>();
+
+        private void Awake()
+        {
+            UpdateTimer.OnAnyTestCompleted += delegate { listToUpdate = new List<ListUpdated>(); };
+        }
+
         public void AddUpdateItem(ListUpdated listUpdated)
         {
             listToUpdate.Add(listUpdated);
         }
-        private void Awake()
-        {
-            listToUpdate = new List<ListUpdated>();
-        }
+        
         void Update()
         {
             foreach (var item in listToUpdate)

@@ -31,6 +31,8 @@ public class TestCaseButton : MonoBehaviour
     private void EnableButtonPress()
     {
         button.enabled = true;
+        FindObjectOfType<ClearAllChildren>()?.DestroyAllChildren();
+        FindObjectOfType<ChildDeactivator>()?.DeactivateAllChildren();
     }
 
 
