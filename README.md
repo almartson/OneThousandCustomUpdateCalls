@@ -1,6 +1,6 @@
 # PerformanceTestCustomUpdateCalls
-This is an extended version of my friend Alejandros project about unity update calls performance testing.
-Main idea is avoiding Unity’s own update method if you are running many Monobehaviours at the same time.
+This is an extended version of my friend Alejandros project about unity update calls performance fix.
+Main idea is avoiding Unity’s own update method if you are running many Monobehaviours at the same time by implimenting a update manager.
 
 The original projects manager is using an array of modified Monobehaviours that it cycles through with an for loop each update. The manager calls a update method on each element.
 
