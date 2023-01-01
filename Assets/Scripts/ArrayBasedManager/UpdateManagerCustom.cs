@@ -10,6 +10,7 @@
 /// </summary>
 public class UpdateManagerCustom : MonoBehaviour 
 {
+    FPSTimer timer = new FPSTimer();
 
     /// <summary>
     /// Description of what this Script does.
@@ -56,7 +57,7 @@ public class UpdateManagerCustom : MonoBehaviour
                 //
                 this._myManagedUpdateBehaviorList = new MyRobotBehaviour[this._myCloner_GO._totalOfGameObjectsToCreate];
 
-
+                timer.StartTimer();
                 // Go through the Loop and Get the Sript, & pass it out to the variable
                 //
                 for (int i = 0; i < this._myCloner_GO._totalOfGameObjectsToCreate; i++)
@@ -64,6 +65,11 @@ public class UpdateManagerCustom : MonoBehaviour
                     this._myManagedUpdateBehaviorList[i] = this._myCloner_GO._myCreatedGOArray[i].GetComponent<MyRobotBehaviour>(); ;
 
                 }//End for
+                timer.StopTimer();
+                
+                var initTime = timer.GetLastFramesLenghtInMS();
+                StatDisplay.Instance.SetInitializationTime(initTime.ToString());
+                timer.ResetTimer();
                 
             }//End if ((this._myCloner_GO._myCreatedGOArray != null) && (this._myCl......
 
@@ -77,14 +83,22 @@ public class UpdateManagerCustom : MonoBehaviour
     /// </summary>
     private void Update ()
     {
+        if (timer.IsRunning)
+        {
+            timer.Update();
+        }
+        else
+        {
+            timer.StartTimer();
+        }
         // OPTIMUM
         //
         for (int i = 0; i < this._myCloner_GO._totalOfGameObjectsToCreate; i++)
         {
             this._myManagedUpdateBehaviorList[i].UpdateMe();
-
         }//End for
 
+        
         // You may add some other For-Loops, similar to the one above: for other GameObjects/Behaviours..........
         //..........
 

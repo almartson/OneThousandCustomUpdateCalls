@@ -4,7 +4,6 @@ using System.Collections;
 
 public class Counter : MonoBehaviour
 {
-
     public float StartTime = 1f;
 
     private Stopwatch sp;
@@ -21,6 +20,9 @@ public class Counter : MonoBehaviour
     public void StartTimer()
     {
         isRunning= true;
+        last = 0;
+        total = 0;
+        num = 0;
         ResetStopWatch();
     }
     public void StopTimer()
@@ -29,7 +31,7 @@ public class Counter : MonoBehaviour
         sp.Stop();
     }
 
-    private void Update()
+    public void Tick()
     {
         if (Time.time < StartTime && isRunning)
         {
