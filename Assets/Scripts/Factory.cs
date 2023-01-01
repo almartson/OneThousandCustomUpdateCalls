@@ -15,10 +15,12 @@ namespace ObserverManager
         public void SpawnAmount(int amountToSpawn)
         {
             numberOfInstances = amountToSpawn;
-            CreateInstances(ObjectToInstanciate, numberOfInstances);
+            StatDisplay.Instance.ShowInitializingText();
+            StartCoroutine(CreateInstances(ObjectToInstanciate, numberOfInstances));
         }
-        public void CreateInstances(TestCase go, int amount)
+        IEnumerator CreateInstances(TestCase go, int amount)
         {
+            yield return null;
             timer= new FPSTimer();
             var gobj = new GameObject("Parent");
             gobj.transform.parent = tragetTransform;

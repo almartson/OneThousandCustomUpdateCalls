@@ -4,6 +4,7 @@ using TMPro;
 using System;
 using ObserverManager;
 using System.Collections.Generic;
+using System.Collections;
 
 public class TestCaseButton : MonoBehaviour
 {
@@ -39,12 +40,12 @@ public class TestCaseButton : MonoBehaviour
     private void TestStart()
     {
         OnAnyTestButtonClicked?.Invoke();
-        StatDisplay.Instance.ShowInitializingText();
-        SetSpawnAmount();
+        StartCoroutine(SetSpawnAmount());
     }
 
-    void SetSpawnAmount()
+    IEnumerator SetSpawnAmount()
     {
+        yield return null;
 
         List<ICreate> childs = testCaseGameObject.transform.GetComponentsInChildrenRecursively<ICreate>();
 
