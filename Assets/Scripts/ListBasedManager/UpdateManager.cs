@@ -28,6 +28,7 @@ namespace ListManager
             {
                 item.MyUpdate();
             }
+            
         }
     }
 }

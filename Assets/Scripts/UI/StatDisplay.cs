@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -61,4 +62,8 @@ public class StatDisplay : MonoBehaviour
         Initialization.text = lenght;
     }
 
+    internal float GetInitTime()
+    {
+        return float.Parse(InitializingText.text);
+    }
 }
