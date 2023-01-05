@@ -10,17 +10,24 @@ namespace ObserverManager
         [SerializeField] TestCase ObjectToInstanciate;
         [SerializeField] int numberOfInstances;
         [SerializeField] Transform tragetTransform;
+        [SerializeField] BoolValue ManagerReady;
         FPSTimer timer;
         
         public void SpawnAmount(int amountToSpawn)
         {
             numberOfInstances = amountToSpawn;
             StatDisplay.Instance.ShowInitializingText();
-            StartCoroutine(CreateInstances(ObjectToInstanciate, numberOfInstances));
+
+            StartCoroutine(CreateInstancesNextFrame(ObjectToInstanciate, numberOfInstances));
         }
-        IEnumerator CreateInstances(TestCase go, int amount)
+        IEnumerator CreateInstancesNextFrame(TestCase go, int amount)
         {
             yield return null;
+            while (ManagerReady != null && !ManagerReady.value)
+            {
+                yield return null;
+            }
+            
             timer= new FPSTimer();
             var gobj = new GameObject("Parent");
             gobj.transform.parent = tragetTransform;
