@@ -1,3 +1,4 @@
+using ObserverManager;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,16 +24,18 @@ public class UpdateTimer : MonoBehaviour
     void Update()
     {
         elaspedTime += Time.deltaTime;
-        if(timer.IsRunning)
+        if (timer.IsRunning)
         {
             timer.Update();
             if (elaspedTime > testLenght)
             {
                 timer.StopTimer();
                 shouldMesure = false;
+
                 StatDisplay.Instance.SetAvarageFpsText(timer.GetAvarageFramePerSecond().ToString());
                 StatDisplay.Instance.SetAvarageUpdateLenghtText(timer.GetAvarageFrameLenghtInMS().ToString());
                 StatDisplay.Instance.HideRunningStatus();
+                RecordKeeper.Instance.AddResults(gameObject.name, 0, timer.GetAvarageFramePerSecond());
                 OnAnyTestCompleted?.Invoke();
             }
         }
@@ -40,6 +43,6 @@ public class UpdateTimer : MonoBehaviour
         {
             timer.StartTimer();
         }
-        
+
     }
 }

@@ -22,7 +22,6 @@ public class TestCaseButton : MonoBehaviour
         OnAnyTestButtonClicked += BlockButtonPress;
         UpdateTimer.OnAnyTestCompleted += EnableButtonPress;
         button.onClick.AddListener(TestStart);
-        
     }
 
     private void BlockButtonPress()

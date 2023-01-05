@@ -20,6 +20,7 @@ namespace ArrayBasedManager
         private void OnDisable()
         {
             ready.value = false;
+            currentIndex= 0;
         }
 
         public void AddToUpdateArray(ArrayUpdated arrayUpdated)
