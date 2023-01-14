@@ -13,7 +13,7 @@ using UnityEngine;
 
     [SerializeField] List<Result> results;
 
-    public void AddResults(string testName,float initTime, float avgFPS, float AvgUpdateLenght)
+    public void AddResults(string testName,string initTime, float avgFPS, string AvgUpdateLenght)
     {
         Result newResult = new Result() {
             name = testName,
@@ -32,7 +32,7 @@ using UnityEngine;
 public struct Result
 {
     public string name;
-    public float initilizationTime;
+    public string initilizationTime;
     public float avarageFPS;
-    public float avarageUpdateLenght;
+    public string avarageUpdateLenght;
 }

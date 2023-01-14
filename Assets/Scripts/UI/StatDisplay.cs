@@ -62,8 +62,8 @@ public class StatDisplay : MonoBehaviour
         Initialization.text = lenght;
     }
 
-    internal float GetInitTime()
+    internal string GetInitTime()
     {
-        return float.Parse(InitializingText.text);
+        return (Initialization.text);
     }
 }

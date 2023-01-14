@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace ObserverManager
 {
-
     public class UpdateManager : MonoBehaviour
     {
         public Action OnUpdate = delegate { };
